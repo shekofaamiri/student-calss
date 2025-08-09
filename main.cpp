@@ -1,26 +1,51 @@
 #include <iostream>
-
+#include <string>
 using namespace std;
 
-// class of student...
-class Sttudent
-{
+class Student {
 private:
     string name;
     int age;
-    float greade;
+    float grade;
+
 public:
-    void setName(const string n){
-        if(n >= 3)
-            name = n
-        else
-            cout << "Error!";
+    // Setter ها
+    void setName(const string& n) {
+        name = n;
     }
-    
+    void setAge(int a) {
+        if (a > 0) age = a;
+        else cout << "Invalid age!" << endl;
+    }
+    void setGrade(float g) {
+        if (g >= 0.0 && g <= 100.0) grade = g;
+        else cout << "Invalid grade!" << endl;
+    }
+
+    // Getter ها
+    string getName() const {
+        return name;
+    }
+    int getAge() const {
+        return age;
+    }
+    float getGrade() const {
+        return grade;
+    }
+
+    void display() const {
+        cout << "Name: " << name << "\nAge: " << age << "\nGrade: " << grade << endl;
+    }
 };
 
-
-
 int main() {
+    Student s;
+
+    s.setName("Ali");
+    s.setAge(20);
+    s.setGrade(87.5);
+
+    s.display();
+
     return 0;
 }
