@@ -6,6 +6,9 @@ using namespace std;
 class Sttudent
 {
 private:
+    string name;
+    int age;
+    float greade;
 public:
     
 };
