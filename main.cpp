@@ -10,6 +10,12 @@ private:
     int age;
     float greade;
 public:
+    void setName(const string n){
+        if(n >= 3)
+            name = n
+        else
+            cout << "Error!";
+    }
     
 };
 
